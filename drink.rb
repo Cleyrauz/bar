@@ -6,6 +6,6 @@ class Drink
     @name = name
     @price = price
     @alcohol_level = alcohol_level
-  end 
+  end
 
 end

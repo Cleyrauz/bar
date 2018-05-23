@@ -9,8 +9,8 @@ class PubTest < MiniTest::Test
 
   def setup
     @pub = Pub.new("Alison Arms", 40)
-    @drink = Drink.new("Cosmo", 7, 3)
-    @customer = Customer.new("Angelina", 10, 25, 5)
+    @drink = Drink.new("Cosmo", 7, 10)
+    @customer = Customer.new("Angelina", 10, 25, 0)
   end
 
   def test_pub_has_name
@@ -40,8 +40,9 @@ class PubTest < MiniTest::Test
   end
 
   def test_refuse_service
-    @pub.
-    assert_equal("Too drunk", @customer.check_drunk_level)
+    @customer.add_alcohol(@drink.alcohol_level)
+    @pub.refuse_service(@customer)
+    assert_equal("Too Drunk", @pub.refuse_service(@customer))
   end
 
 end

@@ -28,8 +28,12 @@ class Pub
     end
   end
 
-  def refuse_service
-
-  end 
+  def refuse_service(customer)
+    if customer.drunkness >= 5
+      return "Too Drunk"
+    else
+      return "Order another drink"
+    end
+  end
 
 end
