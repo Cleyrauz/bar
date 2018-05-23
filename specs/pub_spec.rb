@@ -29,8 +29,21 @@ class PubTest < MiniTest::Test
   end
 
   def test_add_drink
-    @pub.add_drink(@drink1)
-    assert_equal(1, @pub.get_drink_count())
+    @pub.add_drink(@drink1, 10)
+    @pub.add_drink(@drink2, 5)
+    assert_equal(15, @pub.get_drink_count)
+  end
+
+  # def test_sell_drink_to_customer
+  #   @pub.add_drink(@drink1, 10)
+  #   @pub.add_drink(@drink2, 5)
+  #   @pub.remove_drink_from_stock(@drink1)
+  #   assert_equal(9, @pub.get_drink_count)
+  # end
+
+  def test_stock_value
+    @pub.add_drink(@drink1, 10)
+    assert_equal(70, @pub.stock_value(@drink1, 10))
   end
 
   def test_add_money_to_till

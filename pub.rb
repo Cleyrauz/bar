@@ -5,16 +5,24 @@ class Pub
   def initialize(name, till)
     @name = name
     @till = till
-    @drinks = []
+    @drinks = {}
     @stock = {}
   end
 
   def get_drink_count
-    return @drinks.length
+    return @drinks.values.sum
   end
 
-  def add_drink(drink)
-    @drinks << drink
+  def add_drink(drink, quantity)
+    @drinks[drink] = quantity
+  end
+
+  # def remove_drink_from_stock(drink)
+  #   @stock[:drinks][0]-= drink
+  # end
+
+  def stock_value(drink, quantity)
+    value = drink.price * quantity
   end
 
   def add_money_to_till(drink)
