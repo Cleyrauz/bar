@@ -55,5 +55,18 @@ class CustomerTest < MiniTest::Test
     assert_equal(5, @customer.check_wallet)
   end
 
+  def test_customer_buys_food
+    @customer.customer_bought_food(@food)
+    assert_equal(1, @customer.customer_food.count)
+  end
+
+
+
+  # def test_decrease_drunkness
+  #   @customer = Customer.new("Angelina", 10, 25, 15)
+  #   #buy food
+  #
+  # end
+
 
 end

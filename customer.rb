@@ -1,6 +1,6 @@
 class Customer
 
-  attr_accessor :name, :wallet, :drink, :age, :drunkness
+  attr_accessor :name, :wallet, :drink, :age, :drunkness, :customer_food
 
   def initialize(name, wallet, age, drunkness)
     @name = name
@@ -8,6 +8,7 @@ class Customer
     @drinks = []
     @age = age
     @drunkness = 0
+    @customer_food = []
   end
 
   def get_drinks_bought
@@ -37,5 +38,10 @@ end
 def remove_cost_of_food(price)
   @wallet -= price
 end
+
+def customer_bought_food(food)
+  @customer_food << food
+end
+
 
 end
