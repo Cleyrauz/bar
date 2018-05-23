@@ -34,12 +34,11 @@ class PubTest < MiniTest::Test
     assert_equal(15, @pub.get_drink_count)
   end
 
-  # def test_sell_drink_to_customer
-  #   @pub.add_drink(@drink1, 10)
-  #   @pub.add_drink(@drink2, 5)
-  #   @pub.remove_drink_from_stock(@drink1)
-  #   assert_equal(9, @pub.get_drink_count)
-  # end
+  def test_sell_drink_to_customer
+    @pub.add_drink(@drink1, 10)
+    @pub.remove_drink_from_stock(@drink1)
+    assert_equal(9, @pub.get_drink_count)
+  end
 
   def test_stock_value
     @pub.add_drink(@drink1, 10)

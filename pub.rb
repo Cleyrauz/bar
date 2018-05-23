@@ -6,7 +6,6 @@ class Pub
     @name = name
     @till = till
     @drinks = {}
-    @stock = {}
   end
 
   def get_drink_count
@@ -17,9 +16,10 @@ class Pub
     @drinks[drink] = quantity
   end
 
-  # def remove_drink_from_stock(drink)
-  #   @stock[:drinks][0]-= drink
-  # end
+  def remove_drink_from_stock(drink)
+    # @stock.drink -= drink
+    @drinks[drink] -= 1
+  end
 
   def stock_value(drink, quantity)
     value = drink.price * quantity
