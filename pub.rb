@@ -19,4 +19,17 @@ class Pub
   def add_money_to_till(drink)
     @till += drink.price
   end
+
+  def check_age(customer)
+    if customer.age >= 18
+      return true
+    else
+      return false
+    end
+  end
+
+  def refuse_service
+
+  end 
+
 end
