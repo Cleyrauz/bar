@@ -6,6 +6,7 @@ class Pub
     @name = name
     @till = till
     @drinks = []
+    @stock = {}
   end
 
   def get_drink_count
@@ -29,7 +30,7 @@ class Pub
   end
 
   def refuse_service(customer)
-    if customer.drunkness >= 5
+    if customer.drunkness >= 2
       return "Too Drunk"
     else
       return "Order another drink"

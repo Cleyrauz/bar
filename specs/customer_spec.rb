@@ -9,7 +9,9 @@ class CustomerTest < MiniTest::Test
 
   def setup
     @customer = Customer.new("Angelina", 10, 25, 0)
-    @drink = Drink.new("Cosmo", 7, 3)
+    @drink1 = Drink.new("Cosmo", 7, 3)
+    @drink2 = Drink.new("Beer", 7, 3)
+    @drink3 = Drink.new("Rum", 7, 3)
     @food = Food.new("Sweet Potato Fries", 5, 2)
   end
 
@@ -26,7 +28,7 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_buy_drink
-    @customer.add_drinks_bought(@drink)
+    @customer.add_drinks_bought(@drink1)
     assert_equal(1, @customer.get_drinks_bought)
   end
 
@@ -36,7 +38,7 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_remove_money_from_wallet
-    @customer.remove_money(@drink.price)
+    @customer.remove_money(@drink1.price)
     assert_equal(3, @customer.check_wallet)
   end
 
@@ -45,7 +47,7 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_drunk_level_increase
-    @customer.add_alcohol(@drink.alcohol_level)
+    @customer.add_alcohol(@drink1.alcohol_level)
     assert_equal(3, @customer.check_drunk_level)
   end
 
@@ -62,7 +64,7 @@ class CustomerTest < MiniTest::Test
 
   def test_decrease_drunkness
     #add drink
-    @customer.add_alcohol(@drink.alcohol_level)
+    @customer.add_alcohol(@drink1.alcohol_level)
     #buy food
     @customer.customer_bought_food(@food)
     # remove rejuvenation level from drunk level
