@@ -34,5 +34,8 @@ def add_alcohol(drink)
   @drunkness += drink
 end
 
+def remove_cost_of_food(price)
+  @wallet -= price
+end
 
 end
