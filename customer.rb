@@ -25,23 +25,28 @@ class Customer
 
   def remove_money(price)
     @wallet -= price
-end
+  end
 
-def check_drunk_level
-  return @drunkness
-end
+  def check_drunk_level
+    return @drunkness
+  end
 
-def add_alcohol(drink)
-  @drunkness += drink
-end
+  def add_alcohol(drink)
+    @drunkness += drink
+  end
 
-def remove_cost_of_food(price)
-  @wallet -= price
-end
+  def remove_cost_of_food(price)
+    @wallet -= price
+  end
 
-def customer_bought_food(food)
-  @customer_food << food
-end
+  def customer_bought_food(food)
+    @customer_food << food
+  end
+
+  def decrease_drunk_from_rejen(customer, food)
+    customer.drunkness -= food.rejuvenation_level
+    return drunkness
+  end
 
 
 end

@@ -60,13 +60,17 @@ class CustomerTest < MiniTest::Test
     assert_equal(1, @customer.customer_food.count)
   end
 
+  def test_decrease_drunkness
+    #add drink
+    @customer.add_alcohol(@drink.alcohol_level)
+    #buy food
+    @customer.customer_bought_food(@food)
+    # remove rejuvenation level from drunk level
+    @customer.decrease_drunk_from_rejen(@customer, @food)
+    #return new drunk level
+    assert_equal(1, @customer.drunkness)
 
-
-  # def test_decrease_drunkness
-  #   @customer = Customer.new("Angelina", 10, 25, 15)
-  #   #buy food
-  #
-  # end
+  end
 
 
 end
